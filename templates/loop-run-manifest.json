@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "type": "{{prompt|code|design|plan|research|workflow|other}}",
+    "path_or_description": "{{ARTIFACT_PATH_OR_DESCRIPTION}}",
+    "true_job": "{{WHAT_THIS_ARTIFACT_MUST_DO}}"
+  },
+  "runtime": {
+    "platform": "{{CURRENT_AGENT_RUNTIME}}",
+    "subagent_mechanism": "{{MECHANISM_USED}}",
+    "isolation_confirmed": true,
+    "degraded": false
+  },
+  "facets": [
+    {
+      "name": "{{FACET_A_NAME}}",
+      "mission": "{{WHAT_THIS_FACET_PROTECTS}}",
+      "distinctness_rationale": "{{WHY_THIS_IS_NOT_DUPLICATE_OF_OTHER_FACETS}}",
+      "reviewer_output": "{{PATH_TO_REVIEWER_A_OUTPUT}}"
+    },
+    {
+      "name": "{{FACET_B_NAME}}",
+      "mission": "{{WHAT_THIS_FACET_PROTECTS}}",
+      "distinctness_rationale": "{{WHY_THIS_IS_NOT_DUPLICATE_OF_OTHER_FACETS}}",
+      "reviewer_output": "{{PATH_TO_REVIEWER_B_OUTPUT}}"
+    }
+  ],
+  "evidence_items": [
+    {
+      "type": "{{test|screenshot|checklist|source|log|manual_review|other}}",
+      "description": "{{WHAT_WAS_CHECKED}}",
+      "path_or_value": "{{PATH_OUTPUT_OR_OBSERVATION}}"
+    }
+  ],
+  "final_verdicts": [
+    {
+      "facet": "{{FACET_A_NAME}}",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "{{FACET_B_NAME}}",
+      "verdict": "PASS",
+      "score": 120
+    }
+  ]
+}

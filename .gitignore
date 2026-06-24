@@ -1,6 +1,12 @@
 # Runtime artifacts (generated per run, not committed)
 reviewer-*.txt
-loop-run-manifest.json
+/loop-run-manifest.json
+# Ignore run outputs inside templates/ but keep the template file itself
+/templates/reviewer-*.txt
+/templates/final-summary.md
+/templates/issue-ledger.md
+/templates/reviewer-output.md
+/templates/reviewer-packet.md
 
 # macOS
 .DS_Store
