@@ -1,0 +1,11 @@
+# Runtime artifacts (generated per run, not committed)
+reviewer-*.txt
+loop-run-manifest.json
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
