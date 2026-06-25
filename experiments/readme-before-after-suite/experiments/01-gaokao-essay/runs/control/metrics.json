@@ -1,0 +1,29 @@
+{
+  "experiment_id": "01-gaokao-essay",
+  "artifact_type": "essay",
+  "model_label": "Cursor agent visible runtime; exact provider model not exposed",
+  "runtime_platform": "Cursor agent",
+  "scoring_mode": "single-agent non-blind scoring; demonstration only",
+  "token_estimate_note": "Estimated from visible text only; not billing token usage.",
+  "baseline": {
+    "start_time": "2026-06-25T03:53:07Z",
+    "end_time": "2026-06-25T03:53:42Z",
+    "duration_seconds": 35,
+    "input_chars": 400,
+    "output_chars": 1141,
+    "estimated_visible_tokens": 386,
+    "output_path": "runs/control/output.md"
+  },
+  "loop": {
+    "start_time": "2026-06-25T03:53:42Z",
+    "end_time": "2026-06-25T04:14:42Z",
+    "duration_seconds": 1260,
+    "input_chars_estimated": 68000,
+    "output_chars": 25000,
+    "estimated_visible_tokens": 23250,
+    "loop_rounds": 6,
+    "reviewer_count": 3,
+    "final_loop_status": "full_pass",
+    "output_path": "runs/loop/final.md"
+  }
+}

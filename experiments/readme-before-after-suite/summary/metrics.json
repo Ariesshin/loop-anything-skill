@@ -1,0 +1,139 @@
+{
+  "status": "completed",
+  "scoring_mode": "single-agent non-blind scoring; demonstration only; experiment 03 also uses deterministic T01-T11 tests",
+  "model_label": "Cursor agent visible runtime; exact provider model not exposed",
+  "token_estimate_note": "Estimated from visible text only, not billing token usage. Hidden system prompts, tool schemas, provider routing, and billable accounting are not included.",
+  "screenshot_note": "Experiment 02 includes README display screenshots under evidence/screenshots; saved markdown logs, reviewer outputs, manifests, scores, HTML artifacts, and comparison files remain the canonical evidence.",
+  "experiments": [
+    {
+      "experiment_id": "01-gaokao-essay",
+      "artifact_type": "essay",
+      "source_basis": "Real 2026 National I Gaokao prompt, cross-checked in materials/sources.md",
+      "baseline": {
+        "score_100": 78.2,
+        "duration_seconds": 35,
+        "input_chars": 400,
+        "output_chars": 1141,
+        "estimated_visible_tokens": 386
+      },
+      "loop": {
+        "score_100": 100.0,
+        "duration_seconds": 1260,
+        "input_chars": 68000,
+        "output_chars": 25000,
+        "estimated_visible_tokens": 23250,
+        "loop_rounds": 6,
+        "reviewer_count": 3,
+        "status": "full_pass",
+        "final_verdict_note": "Strict grading, argument, and student-expression facets all PASS 120 after targeted rerun."
+      },
+      "delta": {
+        "score_100": 21.8,
+        "duration_seconds": 1225,
+        "estimated_visible_tokens": 22864
+      },
+      "evidence": {
+        "comparison_path": "experiments/01-gaokao-essay/evaluation/comparison.md",
+        "manifest_path": "experiments/01-gaokao-essay/runs/loop/loop-run-manifest.json",
+        "historical_failed_review_path": "experiments/01-gaokao-essay/runs/loop/reviewers/round-5-argument-retry-revise-112.md"
+      }
+    },
+    {
+      "experiment_id": "02-landing-page",
+      "artifact_type": "standalone_html_landing_page_aesthetic_optimization",
+      "source_basis": "Loop Anything README/SKILL material summarized in base prompt",
+      "baseline": {
+        "artifact_path": "experiments/02-landing-page/runs/control/output.html",
+        "score_100": 67.3,
+        "duration_seconds": 24,
+        "input_chars": 1904,
+        "output_chars": 16442,
+        "estimated_visible_tokens": 4587,
+        "sha256": "6d731e7178ace0d8742ca7443323f0e16487dfda5cb3f3c07df9b866a017e18c"
+      },
+      "loop": {
+        "v0_path": "experiments/02-landing-page/runs/loop/v0.html",
+        "final_path": "experiments/02-landing-page/runs/loop/final.html",
+        "score_100": 100.0,
+        "duration_seconds": 811,
+        "input_chars": 43800,
+        "output_chars": 55422,
+        "estimated_visible_tokens": 24806,
+        "loop_rounds": 2,
+        "reviewer_count": 3,
+        "status": "full_pass",
+        "final_verdict_note": "Art direction, composition/typography/spacing, and single-file frontend craft facets all PASS 120.",
+        "sha256": "0c3bd58ed6091c63502fe8ab6cc3de402e17b587a0ed42ebceb52b0b5e52ce87"
+      },
+      "delta": {
+        "score_100": 32.7,
+        "duration_seconds": 787,
+        "estimated_visible_tokens": 20219
+      },
+      "evidence": {
+        "equality_check": "control output.html and loop v0.html are byte-for-byte identical before Loop revision",
+        "comparison_path": "experiments/02-landing-page/evaluation/comparison.md",
+        "manifest_path": "experiments/02-landing-page/runs/loop/loop-run-manifest.json"
+      }
+    },
+    {
+      "experiment_id": "03-receipt-splitter",
+      "artifact_type": "receipt_splitter_reliability",
+      "public_label": {
+        "en": "Receipt splitter reliability",
+        "zh": "账单拆分工具可靠性"
+      },
+      "source_basis": "Deterministic receipt-splitting rules and T01-T11 tests in experiments/03-receipt-splitter/materials/rules-and-test-cases.md",
+      "baseline": {
+        "artifact_path": "experiments/03-receipt-splitter/runs/control/receipt_splitter.py",
+        "result_path": "experiments/03-receipt-splitter/runs/control/output.md",
+        "passed_tests": 5,
+        "total_tests": 11,
+        "raw_score": 25,
+        "score_100": 45.5,
+        "duration_seconds": 26,
+        "input_chars": 463,
+        "output_chars": 1071,
+        "estimated_visible_tokens": 384
+      },
+      "loop": {
+        "v0_path": "experiments/03-receipt-splitter/runs/loop/v0.py",
+        "round_1_path": "experiments/03-receipt-splitter/runs/loop/round-1.py",
+        "final_path": "experiments/03-receipt-splitter/runs/loop/final.py",
+        "result_path": "experiments/03-receipt-splitter/runs/loop/final.md",
+        "passed_tests": 11,
+        "total_tests": 11,
+        "raw_score": 55,
+        "score_100": 100.0,
+        "duration_seconds": 318,
+        "input_chars": 16200,
+        "output_chars": 12400,
+        "estimated_visible_tokens": 7150,
+        "loop_rounds": 1,
+        "reviewer_count": 3,
+        "status": "full_pass",
+        "final_verdict_note": "Rule correctness, edge-case/reproducibility, and README evidence readability facets all PASS 120."
+      },
+      "delta": {
+        "score_100": 54.5,
+        "duration_seconds": 292,
+        "estimated_visible_tokens": 6766
+      },
+      "evidence": {
+        "rules_path": "experiments/03-receipt-splitter/materials/rules-and-test-cases.md",
+        "test_runner_path": "experiments/03-receipt-splitter/materials/run_receipt_splitter_tests.py",
+        "comparison_path": "experiments/03-receipt-splitter/evaluation/comparison.md",
+        "manifest_path": "experiments/03-receipt-splitter/runs/loop/loop-run-manifest.json"
+      }
+    }
+  ],
+  "suite_totals": {
+    "baseline_duration_seconds": 85,
+    "loop_duration_seconds": 2389,
+    "baseline_estimated_visible_tokens": 5357,
+    "loop_estimated_visible_tokens": 55206,
+    "estimated_visible_token_delta": 49849,
+    "full_pass_count": 3,
+    "not_full_pass_count": 0
+  }
+}

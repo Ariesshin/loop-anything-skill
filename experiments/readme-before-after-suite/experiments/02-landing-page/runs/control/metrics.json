@@ -1,0 +1,18 @@
+{
+  "experiment_id": "02-landing-page",
+  "group": "control",
+  "artifact_type": "standalone_html_landing_page_aesthetic_baseline",
+  "artifact_path": "runs/control/output.html",
+  "model_label": "Cursor agent visible runtime; exact provider model not exposed",
+  "duration_seconds": 24,
+  "input_chars": 1904,
+  "output_chars": 16442,
+  "file_size_bytes": 16442,
+  "sha256": "6d731e7178ace0d8742ca7443323f0e16487dfda5cb3f3c07df9b866a017e18c",
+  "token_estimate": {
+    "input_visible_estimate": 476,
+    "output_visible_estimate": 4111,
+    "total_visible_estimate": 4587,
+    "note": "Estimated from visible text only; not billing token usage."
+  }
+}

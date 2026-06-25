@@ -1,0 +1,141 @@
+{
+  "experiment_id": "02-landing-page",
+  "artifact_type": "standalone_html_landing_page_aesthetic_optimization",
+  "artifact": {
+    "type": "standalone_html_landing_page",
+    "path_or_description": "experiments/02-landing-page/runs/loop/final.html",
+    "true_job": "A real standalone HTML landing page for Loop Anything whose before/after comparison demonstrates aesthetic optimization: same core content and product claims, upgraded art direction, typography, composition, color, material treatment, inline SVG craft, and responsive polish."
+  },
+  "runtime": {
+    "platform": "Cursor agent",
+    "subagent_mechanism": "Task tool with isolated generalPurpose subagents",
+    "isolation_confirmed": true,
+    "degraded": false
+  },
+  "model_label": "Cursor agent visible runtime; exact provider model not exposed",
+  "runtime_platform": "Cursor agent",
+  "isolation_confirmed": true,
+  "degraded": false,
+  "start_time": "2026-06-25T00:00:00Z",
+  "end_time": "2026-06-25T00:13:31Z",
+  "duration_seconds": 811,
+  "input_chars": 43800,
+  "output_chars": 55422,
+  "loop_rounds": 2,
+  "reviewer_count": 3,
+  "facets": [
+    {
+      "name": "Art direction and visual identity",
+      "mission": "Verify the final page is visually distinctive, cohesive, product-worthy, and README-worthy as an aesthetic before/after demonstration rather than a content rewrite.",
+      "distinctness_rationale": "A page can be valid, accessible, and well-structured while still looking generic or lacking art direction.",
+      "reviewer_output": "final-art-direction.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-art-direction.md"
+    },
+    {
+      "name": "Composition, typography, and spacing",
+      "mission": "Verify visual hierarchy, rhythm, scale, alignment, whitespace, grouping, and responsive composition.",
+      "distinctness_rationale": "A page can have a recognizable visual identity while still failing due to weak hierarchy, flat rhythm, cramped grouping, or poor mobile composition.",
+      "reviewer_output": "final-composition-typography-spacing.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-composition-typography-spacing.md"
+    },
+    {
+      "name": "Single-file frontend craft",
+      "mission": "Verify standalone browser-openable implementation quality, inline-only assets, responsive behavior, accessibility basics, semantic structure, and engineering restraint.",
+      "distinctness_rationale": "A page can look aesthetically polished while breaking the single-file/no-dependency constraint, accessibility basics, or responsive implementation quality.",
+      "reviewer_output": "final-single-file-frontend-craft.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-single-file-frontend-craft.md"
+    }
+  ],
+  "evidence_items": [
+    {
+      "type": "source",
+      "description": "Control standalone HTML baseline, usable but visually conservative.",
+      "path_or_value": "experiments/02-landing-page/runs/control/output.html"
+    },
+    {
+      "type": "source",
+      "description": "Loop v0 HTML is byte-for-byte identical to the control baseline before Loop revision.",
+      "path_or_value": "experiments/02-landing-page/runs/loop/v0.html; sha256 6d731e7178ace0d8742ca7443323f0e16487dfda5cb3f3c07df9b866a017e18c"
+    },
+    {
+      "type": "source",
+      "description": "Final standalone HTML after aesthetic Loop revision.",
+      "path_or_value": "experiments/02-landing-page/runs/loop/final.html; sha256 0c3bd58ed6091c63502fe8ab6cc3de402e17b587a0ed42ebceb52b0b5e52ce87"
+    },
+    {
+      "type": "log",
+      "description": "Static HTML, dependency, checksum, and content-change evidence.",
+      "path_or_value": "experiments/02-landing-page/evidence/logs/README.md"
+    },
+    {
+      "type": "manual_review",
+      "description": "Final reviewer outputs all include Verdict PASS, Score 120, Must-fix issues none, and 120-level approval statements.",
+      "path_or_value": "runs/loop/reviewers/final-art-direction.md; runs/loop/reviewers/final-composition-typography-spacing.md; runs/loop/reviewers/final-single-file-frontend-craft.md"
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "status": "revise",
+      "reviewer_outputs": [
+        "runs/loop/reviewers/round-1-art-direction.md",
+        "runs/loop/reviewers/round-1-composition-typography-spacing.md",
+        "runs/loop/reviewers/round-1-single-file-frontend-craft.md"
+      ],
+      "revision_path": "runs/loop/round-1.html",
+      "notes": "Art direction returned REVISE 45, composition returned REVISE 72, and a PASS 115 frontend output was treated as invalid/non-passing because PASS requires Score 120."
+    },
+    {
+      "round": "final-attempt-1",
+      "status": "revise",
+      "reviewer_outputs": [
+        "runs/loop/reviewers/final-art-direction-attempt-1.md",
+        "runs/loop/reviewers/final-composition-typography-spacing-attempt-1.md",
+        "runs/loop/reviewers/final-single-file-frontend-craft-attempt-1.md"
+      ],
+      "revision_path": "runs/loop/round-2.md",
+      "notes": "Art direction and composition both returned REVISE 108; frontend craft returned PASS 120. A targeted aesthetics-only revision strengthened before/after visual contrast, hero proportions, section rhythm, tablet timeline, card hierarchy, and button states."
+    },
+    {
+      "round": "final",
+      "status": "pass",
+      "reviewer_outputs": [
+        "runs/loop/reviewers/final-art-direction.md",
+        "runs/loop/reviewers/final-composition-typography-spacing.md",
+        "runs/loop/reviewers/final-single-file-frontend-craft.md"
+      ],
+      "revision_path": "runs/loop/final.html",
+      "notes": "New isolated final reviewers returned PASS with Score 120 for all three facets."
+    }
+  ],
+  "final_verdicts": [
+    {
+      "facet": "Art direction and visual identity",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "Composition, typography, and spacing",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "Single-file frontend craft",
+      "verdict": "PASS",
+      "score": 120
+    }
+  ],
+  "final_loop_status": "full_pass",
+  "token_estimate": {
+    "input_visible_estimate": 10950,
+    "output_visible_estimate": 13856,
+    "total_visible_estimate": 24806,
+    "note": "Estimated from visible text only; not billing token usage. Hidden system prompts, tool schemas, provider routing, and billable accounting are not included."
+  }
+}

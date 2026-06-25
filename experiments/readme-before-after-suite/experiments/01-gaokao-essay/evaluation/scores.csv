@@ -1,0 +1,3 @@
+experiment_id,artifact,output_label,raw_score,max_raw_score,normalized_score_100,scoring_mode,notes
+01-gaokao-essay,essay,baseline,43,55,78.2,"single-agent non-blind scoring; demonstration only","扣题和完整度达标，但时代段硬贴、结尾口号化、细节模板感较强"
+01-gaokao-essay,essay,loop_final,55,55,100.0,"single-agent non-blind scoring; demonstration only","具体细节、成长印记、时代关联和论证桥均完成；最终三位审查员均 PASS 120"

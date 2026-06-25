@@ -1,0 +1,99 @@
+{
+  "experiment_id": "01-gaokao-essay",
+  "artifact_type": "essay",
+  "model_label": "Cursor agent visible runtime; exact provider model not exposed",
+  "status": "full_pass",
+  "artifact": {
+    "type": "essay",
+    "path_or_description": "experiments/01-gaokao-essay/runs/loop/final.md",
+    "true_job": "A Chinese Gaokao-style essay for the real 2026 National I prompt, showing how the meaning of one word changed during youth growth and why that change has personal and era significance."
+  },
+  "runtime": {
+    "platform": "Cursor agent",
+    "subagent_mechanism": "Cursor Task tool",
+    "isolation_confirmed": true,
+    "degraded": false
+  },
+  "run_history": {
+    "original_status": "not_full_pass",
+    "original_note": "The earlier five-round run was recorded honestly: strict-grading and student-expression reached PASS 120, while argument returned REVISE 112.",
+    "user_requested_continuation": true,
+    "rerun_note": "A targeted revision fixed the argument bridge and repetitive conclusion issues, then fresh final reviewer instances all returned PASS 120.",
+    "original_rounds": 5,
+    "targeted_rerun_rounds": 1,
+    "total_revision_rounds_recorded": 6
+  },
+  "facets": [
+    {
+      "name": "strict-grading",
+      "mission": "Protect Gaokao prompt fit, constraints, word choice, growth imprint, complete essay form, and no obvious template writing.",
+      "distinctness_rationale": "The essay can be logically coherent and student-like while still failing the exact Gaokao prompt or constraints.",
+      "reviewer_output": "final-strict-grading.md"
+    },
+    {
+      "name": "argument",
+      "mission": "Protect reasoning support, paragraph progression, transitions, era connection, and non-repetitive non-slogan conclusion.",
+      "distinctness_rationale": "The essay can fit the prompt and sound natural while still relying on weak logic, a hard-pasted era paragraph, or repetitive conclusion.",
+      "reviewer_output": "final-argument.md"
+    },
+    {
+      "name": "student-expression",
+      "mission": "Protect credible high-school student voice, concrete experience, natural tone, restrained emotion, and non-template expression.",
+      "distinctness_rationale": "The essay can be correct and well-argued while still sounding too adult, promotional, or formulaic for a student exam essay.",
+      "reviewer_output": "final-student-expression.md"
+    }
+  ],
+  "evidence_items": [
+    {
+      "type": "source",
+      "description": "Real 2026 National I Gaokao essay prompt source is recorded and cross-checked.",
+      "path_or_value": "materials/sources.md"
+    },
+    {
+      "type": "source",
+      "description": "Baseline control output.",
+      "path_or_value": "experiments/01-gaokao-essay/runs/control/output.md; sha256 aae3def3a69fdd00921dc3219d1e0a7f09e8ef70a1884ce2f278bd67a33583a4"
+    },
+    {
+      "type": "source",
+      "description": "Final essay after targeted rerun.",
+      "path_or_value": "experiments/01-gaokao-essay/runs/loop/final.md; sha256 8fbcb6f502e3c673e2ae8ab0a0d586cd9efddb76934b01106fb3c7fd64fd3bd8"
+    },
+    {
+      "type": "manual_review",
+      "description": "Original failed argument review retained as historical evidence, not used for the new full_pass claim.",
+      "path_or_value": "experiments/01-gaokao-essay/runs/loop/reviewers/round-5-argument-retry-revise-112.md"
+    },
+    {
+      "type": "manual_review",
+      "description": "Fresh final reviewers all include Verdict PASS, Score 120, no must-fix issues, evidence checked, and 120-level approval statements.",
+      "path_or_value": "final-strict-grading.md; final-argument.md; final-student-expression.md"
+    }
+  ],
+  "final_verdicts": [
+    {
+      "facet": "strict-grading",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "argument",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "student-expression",
+      "verdict": "PASS",
+      "score": 120
+    }
+  ],
+  "metrics": {
+    "baseline_duration_seconds": 35,
+    "loop_duration_seconds_estimated": 1260,
+    "baseline_estimated_visible_tokens": 386,
+    "loop_estimated_visible_tokens": 23250,
+    "estimated_visible_token_delta": 22864,
+    "scoring_mode": "single-agent non-blind scoring; demonstration only",
+    "token_estimate_note": "Estimated from visible text only; not billing token usage."
+  }
+}

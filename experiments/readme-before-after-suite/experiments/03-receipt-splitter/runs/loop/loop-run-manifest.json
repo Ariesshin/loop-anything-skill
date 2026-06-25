@@ -1,0 +1,123 @@
+{
+  "experiment_id": "03-receipt-splitter",
+  "artifact_type": "receipt_splitter_reliability",
+  "artifact": {
+    "type": "receipt_splitter_reliability",
+    "path_or_description": "experiments/03-receipt-splitter/runs/loop/final.py and runs/loop/final.md",
+    "true_job": "A non-programmer-readable small-tool reliability experiment showing that Loop Anything moves a plausible receipt splitter first draft from simple-case success to reproducible rule reliability across named receipt rules and edge cases."
+  },
+  "runtime": {
+    "platform": "Cursor agent",
+    "subagent_mechanism": "Task tool with isolated generalPurpose subagents",
+    "isolation_confirmed": true,
+    "degraded": false
+  },
+  "model_label": "Cursor agent visible runtime",
+  "runtime_platform": "Cursor agent",
+  "isolation_confirmed": true,
+  "degraded": false,
+  "start_time": "2026-06-25T01:08:00Z",
+  "end_time": "2026-06-25T01:13:18Z",
+  "duration_seconds": 318,
+  "input_chars": 16200,
+  "output_chars": 12400,
+  "loop_rounds": 1,
+  "reviewer_count": 3,
+  "facets": [
+    {
+      "name": "Rule correctness",
+      "mission": "Verify the final receipt splitter obeys the named money rules: item ownership, discount order, tax/tip allocation, cent reconciliation, and clear invalid-input rejection.",
+      "distinctness_rationale": "A tool can be reproducible and readable while still failing the actual money rules.",
+      "reviewer_output": "final-rule-correctness.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-rule-correctness.md"
+    },
+    {
+      "name": "Edge-case and reproducibility",
+      "mission": "Verify deterministic evidence, unchanged T01-T11 tests, rounding reconciliation, invalid-input coverage, and reproducible commands.",
+      "distinctness_rationale": "A tool can follow core rules in examples while still lacking reproducible proof or edge-case coverage.",
+      "reviewer_output": "final-edge-case-reproducibility.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-edge-case-reproducibility.md"
+    },
+    {
+      "name": "README evidence readability",
+      "mission": "Verify non-programmer readers can understand the before/after value from plain money rules and a pass/fail table without reading code.",
+      "distinctness_rationale": "A tool can be correct and reproducible while still failing as README evidence if readers need code knowledge to understand it.",
+      "reviewer_output": "final-readme-evidence-readability.md",
+      "final_verdict": "PASS",
+      "final_score": 120,
+      "reviewer_output_path": "runs/loop/reviewers/final-readme-evidence-readability.md"
+    }
+  ],
+  "evidence_items": [
+    {
+      "type": "source",
+      "description": "Human-readable rules and deterministic T01-T11 test cases.",
+      "path_or_value": "experiments/03-receipt-splitter/materials/rules-and-test-cases.md"
+    },
+    {
+      "type": "test",
+      "description": "Baseline deterministic test result: 5/11 tests, raw score 25/55, normalized 45.5/100.",
+      "path_or_value": "experiments/03-receipt-splitter/runs/control/output.md"
+    },
+    {
+      "type": "test",
+      "description": "Loop final deterministic test result: 11/11 tests, raw score 55/55, normalized 100.0/100.",
+      "path_or_value": "experiments/03-receipt-splitter/runs/loop/final.md"
+    },
+    {
+      "type": "source",
+      "description": "Deterministic local test runner used for both baseline and final.",
+      "path_or_value": "experiments/03-receipt-splitter/materials/run_receipt_splitter_tests.py"
+    },
+    {
+      "type": "manual_review",
+      "description": "Final reviewer outputs all include Verdict PASS, Score 120, non-empty Evidence checked, Must-fix issues none, and 120-level approval statements.",
+      "path_or_value": "final-rule-correctness.md; final-edge-case-reproducibility.md; final-readme-evidence-readability.md"
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "reviewer_outputs": [],
+      "revision_path": "runs/loop/round-1.py",
+      "notes": "Rule-based revision created from baseline to satisfy T01-T11 receipt rules."
+    },
+    {
+      "round": "final",
+      "reviewer_outputs": [
+        "runs/loop/reviewers/final-rule-correctness.md",
+        "runs/loop/reviewers/final-edge-case-reproducibility.md",
+        "runs/loop/reviewers/final-readme-evidence-readability.md"
+      ],
+      "revision_path": "runs/loop/final.py"
+    }
+  ],
+  "final_verdicts": [
+    {
+      "facet": "Rule correctness",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "Edge-case and reproducibility",
+      "verdict": "PASS",
+      "score": 120
+    },
+    {
+      "facet": "README evidence readability",
+      "verdict": "PASS",
+      "score": 120
+    }
+  ],
+  "final_loop_status": "full_pass",
+  "token_estimate": {
+    "input_visible_estimate": 4100,
+    "output_visible_estimate": 3050,
+    "total_visible_estimate": 7150,
+    "note": "Estimated from visible text only; not billing token usage."
+  }
+}

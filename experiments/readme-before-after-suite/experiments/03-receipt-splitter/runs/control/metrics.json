@@ -1,0 +1,50 @@
+{
+  "experiment_id": "03-receipt-splitter",
+  "artifact_type": "receipt_splitter_reliability",
+  "public_label": {
+    "en": "Receipt splitter reliability",
+    "zh": "账单拆分工具可靠性"
+  },
+  "scoring_mode": "deterministic tests plus demonstration-only non-blind scoring",
+  "max_raw_score": 55,
+  "baseline": {
+    "artifact_path": "runs/control/receipt_splitter.py",
+    "passed_tests": 5,
+    "total_tests": 11,
+    "raw_score": 25,
+    "normalized_score_100": 45.5,
+    "duration_seconds": 26,
+    "input_chars": 463,
+    "output_chars": 1071,
+    "estimated_visible_tokens": 384
+  },
+  "loop": {
+    "v0_path": "runs/loop/v0.py",
+    "round_1_path": "runs/loop/round-1.py",
+    "final_path": "runs/loop/final.py",
+    "passed_tests": 11,
+    "total_tests": 11,
+    "raw_score": 55,
+    "normalized_score_100": 100.0,
+    "duration_seconds": 318,
+    "input_chars": 16200,
+    "output_chars": 12400,
+    "estimated_visible_tokens": 7150,
+    "loop_rounds": 1,
+    "reviewer_count": 3,
+    "status": "full_pass",
+    "final_verdict_note": "Rule correctness, edge-case/reproducibility, and README evidence readability facets all PASS 120."
+  },
+  "delta": {
+    "raw_score": 30,
+    "normalized_score_100": 54.5,
+    "duration_seconds": 292,
+    "estimated_visible_tokens": 6766
+  },
+  "evidence": {
+    "rules_path": "materials/rules-and-test-cases.md",
+    "test_runner_path": "materials/run_receipt_splitter_tests.py",
+    "comparison_path": "evaluation/comparison.md",
+    "manifest_path": "runs/loop/loop-run-manifest.json"
+  }
+}
